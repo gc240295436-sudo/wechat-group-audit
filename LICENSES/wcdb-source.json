@@ -1,0 +1,11 @@
+{
+  "upstream": "TANGandXUE/wcdb-key-tool",
+  "commit": "79f1b5b92e12c66aa281b4a60a3c478b5f547dfa",
+  "original_file": "wcdb_key_tool_windows.py",
+  "original_sha256": "9de22ccc5070bfc5325ece1bdf4da8ca537eea594b821fc2acd46a62c0e41958",
+  "license": "MIT",
+  "published_files": {
+    "src/wechat_group_audit/_wcdb_scan.py": "b2481dd0c910e8df6b66faf759066333b5872888dee4eaf3e98bae4dc451bdc6",
+    "LICENSES/wcdb-key-tool-MIT.txt": "098659c726e64afd1c503227c1f13866a3ae55a533744185d953828f37c54d8e"
+  }
+}

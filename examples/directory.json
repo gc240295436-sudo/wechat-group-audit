@@ -1,0 +1,17 @@
+{
+  "schema": "wga-directory/1",
+  "account": "demo-owner",
+  "contacts": [
+    {"id": "demo-owner", "nickname": "我", "kind": "personal"},
+    {"id": "demo-amy", "nickname": "小林", "remark": "林同学", "kind": "personal"},
+    {"id": "demo-ben", "nickname": "小陈", "kind": "personal"},
+    {"id": "demo-cara", "nickname": "小林", "kind": "personal"},
+    {"id": "demo-dan", "nickname": "未加入活动群", "kind": "personal"},
+    {"id": "demo-eve", "nickname": "咨询助手", "kind": "enterprise"},
+    {"id": "demo-guest", "nickname": "非好友成员", "kind": "other"}
+  ],
+  "groups": [
+    {"id": "demo-notice", "name": "活动通知群", "members": ["demo-owner", "demo-amy", "demo-ben", "demo-guest"], "member_count": 4},
+    {"id": "demo-social", "name": "日常交流群", "members": ["demo-owner", "demo-ben", "demo-cara"], "member_count": 3}
+  ]
+}
