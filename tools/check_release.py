@@ -13,9 +13,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def files():
-    process = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True)
-    if process.returncode == 0:
-        return [ROOT / p.decode("utf-8") for p in process.stdout.split(b"\0") if p]
+    # A skill installed under a user's dotfiles checkout is not itself that
+    # repository. In that case inspect its own files instead of an empty index.
+    try:
+        top = subprocess.run(["git", "rev-parse", "--show-toplevel"], cwd=ROOT, capture_output=True, text=True)
+        if top.returncode == 0 and Path(top.stdout.strip()).resolve() == ROOT.resolve():
+            process = subprocess.run(["git", "ls-files", "-z"], cwd=ROOT, capture_output=True, check=True)
+            return [ROOT / p.decode("utf-8") for p in process.stdout.split(b"\0") if p]
+    except OSError:
+        pass
     ignored = {".git", ".venv", "__pycache__", "build", "dist"}
     return [p for p in ROOT.rglob("*") if p.is_file() and not any(part in ignored or part.endswith(".egg-info") for part in p.relative_to(ROOT).parts)]
 

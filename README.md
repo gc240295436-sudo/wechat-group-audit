@@ -62,7 +62,7 @@ Windows 路线只读当前用户、签名通过的微信进程及所选账号通
 | --mode roster | 完整入群分布 |
 | --kind personal/enterprise/all | 普通好友、企业微信联系人或全部 |
 | --find "备注或昵称" | 缩小好友范围 |
-| --expect 406 --expect 122 | 按选群顺序核对预期人数 |
+| --expect 4 --expect 3 | 按选群顺序核对预期人数 |
 | --previous /private/old/members.json | 对比上次同范围报告 |
 | --output /private/results | 指定本地导出根目录 |
 
